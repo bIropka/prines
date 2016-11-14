@@ -111,6 +111,20 @@ $(document).ready(function () {
 
     }
 
+    /******************************************************************************************************************
+     ******* sliders scripts
+     ******************************************************************************************************************/
+
+    $('.review-slider').slick({
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        appendArrows: '.reviews-header .controls i',
+        prevArrow: '.reviews-header .fa-chevron-left',
+        nextArrow: '.reviews-header .fa-chevron-right',
+        vertical: true,
+        verticalSwiping: true
+    });
+
 });
 
 

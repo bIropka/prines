@@ -164,10 +164,8 @@ img {
     margin: 0;
 }
 .image-wrap img {
-    width: auto;
+    width: 100%;
     height: auto;
-    min-width: 100%;
-    min-height: 100%;
     position: absolute;
     left: 0;
     top: 0;
@@ -195,7 +193,7 @@ img {
 
 section {
     display: block;
-    margin-top: 25px;
+    margin-top: 35px;
 }
 
 /**********************************************************************************************************************
@@ -231,6 +229,11 @@ header[role='banner'] {
     padding: 18px 110px 17px 0;
     position: relative;
     text-align: right;
+}
+
+.mobile-panel {
+    display: none;
+    width: 100%;
 }
 .header-panel > div {
     display: inline-block;
@@ -424,6 +427,17 @@ nav ul li a {
     height: 50px;
     margin-bottom: 15px;
     position: relative;
+}
+.form-search label:after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 20px;
+    background: transparent url('../source/images/sprite-header.png') no-repeat -100px top;
+    position: absolute;
+    right: 5px;
+    top: 12px;
+    z-index: 1;
 }
 .form-search label input {
     display: block;
@@ -651,7 +665,6 @@ footer[role='contentinfo'] .social-links li a i {
     width: 18px;
     height: 18px;
     background: transparent url('../source/images/sprite-social.png') no-repeat 0 0;
-
 }
 .list-header .social-links li:nth-child(2) a {background-position: -22px 0;}
 .list-header .social-links li:nth-child(3) a {background-position: -44px 0;}
@@ -669,6 +682,7 @@ footer[role='contentinfo'] .social-links li a i {
 
 .list-header .view-filter {
     float: right;
+    margin-top: 10px;
 }
 .list-header .view-filter div, .list-header .view-filter div span {
     display: inline-block;
@@ -679,6 +693,7 @@ footer[role='contentinfo'] .social-links li a i {
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
+    color: #434242;
 }
 
 .list-header .view-filter .title {
@@ -718,7 +733,11 @@ footer[role='contentinfo'] .social-links li a i {
 .cards-list .card-restaurant:nth-child(2n) {
     margin: 2% 0 0 0;
 }
-
+.card-restaurant .image-wrap {
+    display: block;
+    width: 100%;
+    padding-top: 79.16666666666667%;
+}
 .card-restaurant .card-preview {
     display: table-cell;
     width: 30%;
@@ -726,7 +745,34 @@ footer[role='contentinfo'] .social-links li a i {
     padding: 20px;
     border-right: 5px solid #f2f2f2;
     vertical-align: top;
+    position: relative;
 }
+.card-preview .rate {
+    margin-top: 5px;
+    text-align: center;
+}
+.card-preview .rate i {
+    color: #d4d7d7;
+}
+.card-preview .rate .filled {
+    color: #b71f32;
+}
+.card-preview .note-online {
+    display: block;
+    font-family: 'Ubuntu Light', sans-serif;
+    font-size: 10px;
+    padding: 3px 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: #000000;
+    color: #ffffff;
+    text-align: center;
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+}
+
 .card-restaurant .card-details {
     display: table-cell;
     width: 70%;
@@ -741,11 +787,13 @@ footer[role='contentinfo'] .social-links li a i {
 .card-restaurant h3 a {
     font-family: 'Ubuntu Light', sans-serif;
     font-size: 20px;
-    text-decoration: underline;
+    border-bottom: 1px solid #434242;
     line-height: 1;
+    color: #434242;
 }
 .card-restaurant h3 a:hover {
     text-decoration: none;
+    border-bottom: 1px solid transparent;
 }
 .card-restaurant .working-hours {
     float: right;
@@ -758,6 +806,7 @@ footer[role='contentinfo'] .social-links li a i {
     font-family: 'Ubuntu Regular', sans-serif;
     font-size: 14px;
     line-height: 1.2;
+    color: #434242;
 }
 .card-restaurant .cuisine {
     display: block;
@@ -784,7 +833,6 @@ footer[role='contentinfo'] .social-links li a i {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
 }
 .card-restaurant .parameters p {
     line-height: 1;
@@ -797,11 +845,304 @@ footer[role='contentinfo'] .social-links li a i {
 .card-restaurant .parameters p small {
     font-family: 'Ubuntu Italic', sans-serif;
     font-size: 12px;
+    color: #434242;
+}
+
+/* popular dishes*/
+
+.card-dish {
+    display: block;
+    float: left;
+    width: 22.75%;
+    margin: 2% 3% 0 0;
+    padding: 20px;
+    background: #ffffff;
+}
+.popular-dishes .card-dish:nth-child(4n) {
+    margin: 2% 0 0 0;
+}
+.card-dish .image-wrap {
+    display: block;
+    width: 100%;
+    padding-top: 69.35483870967742%;
+}
+.card-dish .image-wrap .mark-leader {
+    display: block;
+    font-family: 'Ubuntu Light', sans-serif;
+    font-size: 10px;
+    padding: 3px 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: #b71f32;
+    color: #ffffff;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.card-dish h3 {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 5px 0 10px;
+}
+.card-dish h3 a {
+    font-size: 20px;
+    color: #434242;
+    border-bottom: 1px solid #434242;
+
+}
+.card-dish h3 a:hover {
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+}
+.card-dish .cost {
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    font-size: 18px;
+    color: #a8af20;
+    float: left;
+    margin-top: 10px;
+}
+.card-dish button {
+    color: #ffffff;
+    background: #000000;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    width: 55%;
+    height: 45px;
+    line-height: 1;
+    padding-left: 35px;
+    float: right;
+    position: relative;
+}
+.card-dish button:before {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 20px;
+    background: transparent url('../source/images/sprite-header.png') no-repeat -125px top;
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.card-dish button:hover:before {
+    left: 15px;
+}
+
+/* banner */
+.banner {
+    display: table;
+    width: 100%;
+}
+.banner-image {
+    display: table-cell;
+    text-align: center;
+    background: transparent url('../source/images/background-banner-image.png') no-repeat center;
+    background-size: cover;
+    padding: 35px 0 35px 10%;
+}
+.banner-image p {
+    display: inline-block;
+    text-align: left;
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    font-size: 27px;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.banner-details {
+    display: table-cell;
+    width: 310px;
+    background: #bec447 url('../source/images/background-banner-details.png') no-repeat 90% 15px;
+    vertical-align: middle;
+    padding: 0 30px;
+}
+.banner-details p {
+    font-family: 'Ubuntu Light', sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* tutti-frutti */
+
+.banner-short {
+    width: 280px;
+    height: 352px;
+    background: transparent url('../source/images/background-banner-small.jpg') no-repeat center;
+    background-size: auto 100%;
+    float: left;
+    margin-right: 3%;
+}
+
+.reviews {
+    width: 280px;
+    height: 352px;
+    float: left;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.reviews-header {
+    width: 100%;
+    height: 55px;
+    padding: 0 20px;
+    line-height: 55px;
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    font-size: 20px;
+    color: #b71f32;
+    vertical-align: middle;
+}
+.reviews-header .controls {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.reviews-header .controls i {
+    font-size: 20px;
+    cursor: pointer;
+}
+.reviews-header .controls i:hover {
+    color: #b71f32;
+}
+
+.review-slider {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.review-slider .review {
+    padding: 20px;
+    border-top: 2px dashed #f2f2f2;
+}
+.review-slider .review i {
+    display: inline-block;
+    vertical-align: middle;
+    color: #a8af20;
+}
+.review-slider .review .reviewer {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+}
+.review-slider .review time {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'Ubuntu Light', sans-serif;
+    color: #d1d1d1;
+    font-size: 13px;
+}
+.review-slider .review p {
+    margin-top: 5px;
+    line-height: 1.2;
+}
+
+.events-list {
+    width: 600px;
+    height: 352px;
+    float: right;
+}
+
+.events-list li {
+    display: block;
+    width: 100%;
+    height: 23.5%;
+    padding: 10px 80px 10px 10px;
+    background: #ffffff;
+    margin-bottom: 2%;
+    position: relative;
+    overflow: hidden;
+}
+.events-list li:last-child {
+    margin-bottom: 0;
+}
+.events-list li:nth-child(2n) {
+    background: #e3ecee;
+}
+.events-list li img {
+    height: 100%;
+    width: auto;
+    float: left;
+    margin-right: 15px;
+}
+.events-list .event-info {
+    height: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.events-list .event-info p, .events-list .event-info p a {
+    line-height: 1.1;
+    font-family: 'Ubuntu Light', sans-serif;
+    font-weight: 600;
+}
+.events-list .event-info p span {
+    font-family: 'Ubuntu Bold', sans-serif;
+}
+.events-list .event-info p a {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.events-list .event-info p a:hover {
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+}
+.events-list .event-info .points {
+    line-height: 1.1;
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    font-size: 18px;
+}
+.events-list .event-info .points-minus {
+    color: #b71f32;
+}
+.events-list .event-info .points-plus {
+    color: #a8af20;
+}
+.events-list .event-mark {
+    display: block;
+    width: 26px;
+    height: 24px;
+    background: transparent url('../source/images/sprite-events.png') no-repeat 0 0;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 27px;
+    z-index: 10;
+}
+.events-list .gift-mark {
+    background-position: 0 0;
+}
+.events-list .review-mark {
+    background-position: -26px 0;
+}
+
+/* promo block */
+
+.promo-block p {
+    text-align: justify;
+    margin-top: 30px;
+}
+.promo-block p a {
+    color: #b71f32;
+    text-decoration: underline;
+}
+.promo-block p a:hover {
+    text-decoration: none;
 }
 
 
-
-
 /**********************************************************************************************************************
 ********** general
 ***********************************************************************************************************************/
@@ -831,5 +1172,24 @@ footer[role='contentinfo'] .social-links li a i {
 ***********************************************************************************************************************/
 
 /**********************************************************************************************************************
-********** general
+********** media
 ***********************************************************************************************************************/
+
+@media (max-width: 1230px) {
+
+    .header-panel {
+        margin-left: 100px;
+    }
+    .mobile-panel {
+        display: block;
+        margin-left: 50px;
+    }
+    .burger {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    nav, .header-panel .orders, .header-panel .phones,  .header-panel .sign {
+        display: none;
+    }
+
+}
