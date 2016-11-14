@@ -639,12 +639,19 @@ footer[role='contentinfo'] .social-links li a i {
 }
 .list-header .social-links li {
     padding-top: 11px;
+    position: relative;
+    -webkit-transition: 0.6s;
+    -moz-transition: 0.6s;
+    -ms-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
 }
 .list-header .social-links li a {
     display: block;
     width: 18px;
     height: 18px;
     background: transparent url('../source/images/sprite-social.png') no-repeat 0 0;
+
 }
 .list-header .social-links li:nth-child(2) a {background-position: -22px 0;}
 .list-header .social-links li:nth-child(3) a {background-position: -44px 0;}
@@ -655,6 +662,10 @@ footer[role='contentinfo'] .social-links li a i {
 .list-header .social-links li:nth-child(8) a {background-position: -154px 0;}
 .list-header .social-links li:nth-child(9) a {background-position: -176px 0;}
 .list-header .social-links li:nth-child(10) a {background-position: -198px 0;}
+
+.list-header .social-links li:hover {
+    top: -3px;
+}
 
 .list-header .view-filter {
     float: right;
@@ -698,6 +709,97 @@ footer[role='contentinfo'] .social-links li a i {
 .cards-list li.hidden {
     display: none;
 }
+.card-restaurant {
+    display: table;
+    width: 48.5%;
+    float: left;
+    margin: 2% 3% 0 0;
+}
+.cards-list .card-restaurant:nth-child(2n) {
+    margin: 2% 0 0 0;
+}
+
+.card-restaurant .card-preview {
+    display: table-cell;
+    width: 30%;
+    background: #ffffff;
+    padding: 20px;
+    border-right: 5px solid #f2f2f2;
+    vertical-align: top;
+}
+.card-restaurant .card-details {
+    display: table-cell;
+    width: 70%;
+    background: #ffffff;
+    padding: 20px;
+    vertical-align: top;
+}
+.card-restaurant h3 {
+    float: left;
+    line-height: 1;
+}
+.card-restaurant h3 a {
+    font-family: 'Ubuntu Light', sans-serif;
+    font-size: 20px;
+    text-decoration: underline;
+    line-height: 1;
+}
+.card-restaurant h3 a:hover {
+    text-decoration: none;
+}
+.card-restaurant .working-hours {
+    float: right;
+}
+.card-restaurant .working-hours i {
+    color: #d4d5d5;
+    margin-right: 10px;
+}
+.card-restaurant .cuisine, .card-restaurant .cuisine .value {
+    font-family: 'Ubuntu Regular', sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
+}
+.card-restaurant .cuisine {
+    display: block;
+    height: 32px;
+    overflow: hidden;
+    margin: 10px 0 5px;
+}
+.card-restaurant .cuisine .value {
+    margin-left: 10px;
+}
+.card-restaurant .payment-list li {
+    width: 40px;
+    height: 34px;
+    background: transparent url('../source/images/sprite-payment.png') no-repeat 0 0;
+}
+.card-restaurant .payment-list li:nth-child(2) {background-position: -40px 0}
+.card-restaurant .payment-list li:nth-child(3) {background-position: -80px 0}
+.card-restaurant .payment-list li:nth-child(4) {background-position: -120px 0}
+.card-restaurant .payment-list li:nth-child(5) {background-position: -160px 0}
+.card-restaurant .payment-list li:nth-child(6) {background-position: -200px 0}
+.card-restaurant .payment-list li:nth-child(7) {background-position: -240px 0}
+
+.card-restaurant .parameters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.card-restaurant .parameters p {
+    line-height: 1;
+}
+.card-restaurant .parameters p strong {
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    color: #a8af20;
+    font-size: 18px;
+}
+.card-restaurant .parameters p small {
+    font-family: 'Ubuntu Italic', sans-serif;
+    font-size: 12px;
+}
+
+
 
 
 /**********************************************************************************************************************

@@ -34,18 +34,18 @@ $(document).ready(function () {
         }
 
         if (amountVisible == 0) {
-            $(this).parents('.list-header').siblings('.cards-list').find('li').removeClass('hidden');
+            $(this).parents('.list-header').siblings('.cards-list').find('.card').removeClass('hidden');
         } else {
 
-            var array = $(this).parents('.list-header').siblings('.cards-list').find('li');
-            alert(array.length);
-            /*$.forEach(function(item, i) {
+            var array = $(this).parents('.list-header').siblings('.cards-list').find('.card');
+
+            for (var i = 0; i < array.length; i++) {
                 if (i > amountVisible - 1) {
-                    $(item).addClass('hidden');
+                    $(array[i]).addClass('hidden');
                 } else {
-                    $(item).removeClass('hidden');
+                    $(array[i]).removeClass('hidden');
                 }
-            });*/
+            }
 
         }
 
