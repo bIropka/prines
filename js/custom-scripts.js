@@ -4,16 +4,82 @@ $(document).ready(function () {
      ******* init scripts
      ******************************************************************************************************************/
 
+    if ($(window).scrollTop() >= 30) {
+        $('header[role="banner"]').addClass('fixed');
+    } else {
+        $('header[role="banner"]').removeClass('fixed');
+    }
+    
+    $(window).scroll(function() {
+
+        if ($(window).scrollTop() >= 30) {
+            $('header[role="banner"]').addClass('fixed');
+        } else {
+            $('header[role="banner"]').removeClass('fixed');
+        }
+        
+    });
+    
     setTimeout(function() {
         $('.slider').animate({opacity: 1});
     }, 500);
+
+    if ($(window).width() < '1231'){
+        $('.sign').insertAfter('.burger');
+        $('.phones').insertAfter('.burger');
+        $('.orders').insertAfter('.burger');
+        $('nav').insertAfter('.burger');
+    } else {
+        $('.sign').prependTo('.header-panel');
+        $('.phones').prependTo('.header-panel');
+        $('.orders').prependTo('.header-panel');
+        $('nav').prependTo('.header-panel');
+    }
+
+    $(window).resize(function(){
+        if ($(window).width() < '1231'){
+            $('.sign').insertAfter('.burger');
+            $('.phones').insertAfter('.burger');
+            $('.orders').insertAfter('.burger');
+            $('nav').insertAfter('.burger');
+        } else {
+            $('.sign').prependTo('.header-panel');
+            $('.phones').prependTo('.header-panel');
+            $('.orders').prependTo('.header-panel');
+            $('nav').prependTo('.header-panel');
+        }
+    });
 
     /******************************************************************************************************************
      ******* clicks scripts
      ******************************************************************************************************************/
 
     $('.burger').click(function() {
-        $(this).siblings('nav ul').slideToggle();
+        $(this).parents('.mobile-panel').toggleClass('active');
+    });
+
+    $('.card-dish button').click(function() {
+        $('.window-make-order').fadeIn();
+    });
+
+    $('.form-make-order button').click(function() {
+
+        $('.window-make-order').fadeOut();
+
+        $('.cart-message').stop().fadeIn(0);
+
+        setTimeout(function() {
+            $('.cart-message').fadeOut(2000);
+        }, 3000);
+
+        return false;
+
+    });
+
+    $('.window').click(function (event) {
+        $target = $(event.target);
+        if (!$target.closest($('form')).length) $('.window').fadeOut();
+        if ($target.hasClass('close-window')) $('.window').fadeOut();
     });
 
     $('.list-header .view-filter .filter-choice').click(function() {
@@ -49,7 +115,6 @@ $(document).ready(function () {
 
         }
 
-
     });
 
 
@@ -58,58 +123,34 @@ $(document).ready(function () {
      ******* phones scripts
      ******************************************************************************************************************/
 
-    var cities = $('.header-panel .phones .city li');
-
-
-    $('.header-panel .phones .city li').click(function() {
-
-        var currentIndex = $('.header-panel .phones .city li.active').index();
-
-        $('.header-panel .phones li.active').removeClass('active');
-
-        nextCity(currentIndex);
-
+    $('.header-panel .phones .city').hover(function() {
+        if ($(window).width() > '1230'){
+            $('.header-panel .phones .city ul').stop().slideDown(200);
+        }
+    },
+    function() {
+        if ($(window).width() > '1230'){
+            $('.header-panel .phones .city ul').stop().slideUp(200);
+        }
     });
 
-    $('.header-panel .phones .controls').click(function() {
-
-        var currentIndex = $('.header-panel .phones .city li.active').index();
-
-        $('.header-panel .phones li.active').removeClass('active');
-
-        if($(this).hasClass('control-prev')) {
-            prevCity(currentIndex);
-        } else {
-            nextCity(currentIndex);
+    $('.header-panel .phones .city').click(function() {
+        if ($(window).width() < '1231'){
+            $('.header-panel .phones .city ul').stop().slideToggle(200);
         }
-
     });
 
-    function nextCity(currentIndex) {
+    $('.header-panel .phones .city ul li').click(function() {
 
-        if(currentIndex == cities.length - 1) {
-            currentIndex = 0;
-        } else {
-            currentIndex++;
-        }
+        var currentIndex = $(this).index();
 
-        $('.header-panel .phones .city li').eq(currentIndex).addClass('active');
+        $('.current-city').html($(this).html());
+        $('.header-panel .phones .tel li.active').removeClass('active');
         $('.header-panel .phones .tel li').eq(currentIndex).addClass('active');
 
-    }
+        $('.header-panel .phones .city ul').stop().slideUp(200);
 
-    function prevCity(currentIndex) {
-
-        if(currentIndex == 0) {
-            currentIndex = cities.length - 1;
-        } else {
-            currentIndex--;
-        }
-
-        $('.header-panel .phones .city li').eq(currentIndex).addClass('active');
-        $('.header-panel .phones .tel li').eq(currentIndex).addClass('active');
-
-    }
+    });
 
     /******************************************************************************************************************
      ******* sliders scripts
