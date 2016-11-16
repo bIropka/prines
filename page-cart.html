@@ -119,29 +119,6 @@
 
             </div>
 
-            <div class="header-bottom">
-
-                <a href="index.html" class="logo-main"></a>
-
-                <form action="#" class="form-search">
-
-                    <label>
-                        <input type="text" placeholder="Адрес доставки">
-                    </label>
-
-                    <button type="submit">Найти рестораны</button>
-
-                </form>
-
-            </div>
-
-            <div class="mobile-app">
-
-                <p>Скидка за Заказ через <span>10%</span></p>
-                <a href="#">мобильное приложение</a>
-
-            </div>
-
         </div>
 
     </header>
@@ -152,14 +129,14 @@
 
             <a href="index.html" class="logo-secondary"></a>
 
-            <form action="#" class="form-search">
+            <form action="#" class="form-search clearfix">
                 <label>
                     <input type="text" placeholder="Адрес доставки">
                 </label>
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
 
-            <a href="#" class="mobile-app-secondary"><span>10%<br>скидка</span></a>
+            <a href="#" class="mobile-app-secondary"><div><strong>10%</strong><span>скидка</span></div></a>
 
         </div>
 
@@ -185,17 +162,99 @@
 
         </div>
 
-        <ul class="cart-list">
-
-            <li>
-
-            </li>
-
-        </ul>
-
         <form action="#" class="form-cart-order">
 
+            <ul class="cart-list">
 
+                <li>
+
+                    <div class="image-wrap">
+                        <img src="source/images/image-dish-1.jpg" alt="">
+                        <div class="mark-leader">Лидер продаж</div>
+                    </div>
+
+                    <div class="dish-details">
+
+                        <h3><a href="#">Сырные шарики 140 гр.</a></h3>
+
+                        <div class="dish-cost">350 руб.</div>
+
+                        <a class="restaurant-info" href="#">
+                            <div class="image-wrap">
+                                <img src="source/images/logo-restaurant-1.png" alt="">
+                            </div>
+                            Всё к пиву
+                        </a>
+
+                    </div>
+
+                    <div class="dishes-counter">
+                        <div class="decrease"></div>
+                        <div class="current-amount">1</div>
+                        <div class="increase"></div>
+                        <label><input type="text"></label>
+                    </div>
+
+                    <div class="item-cost"><span class="value">350</span> руб.</div>
+
+                    <button class="remove"><i class="fa fa-close"></i></button>
+
+                </li>
+
+            </ul>
+
+            <fieldset>
+
+                <label>
+                    <input type="text" placeholder="Имя">
+                </label>
+
+                <label>
+                    <input type="text" placeholder="Телефон">
+                </label>
+
+                <label>
+                    <input type="text" placeholder="Адрес">
+                </label>
+
+                <label>
+                    <input type="text" placeholder="Промокод">
+                </label>
+
+            </fieldset>
+
+            <fieldset>
+
+                <label class="textarea-wrap">
+                    <textarea cols="30" rows="" placeholder="Комментарий"></textarea>
+                </label>
+
+            </fieldset>
+
+            <fieldset>
+
+                <p class="title">Доставка</p>
+
+                <input type="radio" id="delivery-courier" name="radio-delivery" checked>
+                <label for="delivery-courier" class="radio-label">Курьером</label>
+
+                <input type="radio" id="delivery-pickup" name="radio-delivery">
+                <label for="delivery-pickup" class="radio-label">Самовывоз</label>
+
+                <p class="title">Способ оплаты</p>
+
+                <input type="radio" id="payment-cash" name="radio-payment" checked>
+                <label for="payment-cash" class="radio-label">Наличные</label>
+
+                <input type="radio" id="payment-card" name="radio-payment">
+                <label for="payment-card" class="radio-label">Банковская карта </label>
+
+                <input type="radio" id="payment-webmoney" name="radio-payment">
+                <label for="payment-webmoney" class="radio-label">Webmoney</label>
+
+                <button type="submit">Оформить заказ</button>
+
+            </fieldset>
 
         </form>
 

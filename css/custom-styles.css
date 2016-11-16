@@ -152,7 +152,6 @@ h2 {
 h3 {
 
 }
-
 .image-wrap {
     display: block;
     position: relative;
@@ -294,12 +293,14 @@ header[role='banner'] {
     display: block;
     width: calc(100% - 115px);
     margin-left: 115px;
-    margin-bottom: 20px;
     background: rgba(255, 255, 255, 0.95);
     padding: 18px 110px 17px 0;
     position: relative;
     text-align: right;
     height: 75px;
+}
+.page-main .header-panel {
+    margin-bottom: 20px;
 }
 
 .header-panel > div {
@@ -737,6 +738,81 @@ nav ul li a {
     top: 0;
     bottom: 0;
     margin: auto;
+    padding: 0;
+    background: none;
+}
+.header-secondary .form-search label {
+    width: calc(100% - 60px);
+    height: 100%;
+    margin: 0;
+    float: left;
+}
+.header-secondary .form-search label:after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 20px;
+    background: transparent url(../source/images/sprite-header.png) no-repeat -25px top;
+    position: absolute;
+    right: 5px;
+    top: 12px;
+    z-index: 1;
+}
+.header-secondary .form-search label input {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #000000;
+    background: transparent;
+    padding: 0 30px 0 15px;
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    color: #ffffff;
+}
+.header-secondary .form-search button {
+    display: block;
+    float: right;
+    height: 100%;
+    width: 45px;
+    color: #ffffff;
+    border: 2px solid #bb2135;
+}
+.header-secondary .form-search button i {
+    color: inherit;
+}
+.header-secondary .form-search button:hover {
+    border: 2px solid #bb2135;
+    background: #ffffff;
+    color: #bb2135;
+}
+
+.mobile-app-secondary {
+    display: block;
+    width: 97px;
+    height: 121px;
+    background: transparent url('../source/images/mobile-app-secondary.png') no-repeat;
+    position: absolute;
+    right: 60px;
+    bottom: 0;
+    background-size: cover;
+}
+.mobile-app-secondary div {
+    background: #ccd058;
+    width: 80px;
+    padding: 8px 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    right: -60px;
+}
+.mobile-app-secondary strong, .mobile-app-secondary span {
+    display: block;
+    font-family: 'OpenSans Bold', sans-serif;
+    font-size: 30px;
+    line-height: 1.1;
+}
+.mobile-app-secondary span {
+    font-size: 15px;
+    color: #ffffff;
 }
 
 /**********************************************************************************************************************
@@ -1888,6 +1964,9 @@ footer[role='contentinfo'] .social-links li a i {
     footer[role='contentinfo'] .wrapper-inner {
         padding: 80px 15px 30px;
     }
+    .header-secondary .wrapper-inner {
+        padding: 0 15px;
+    }
     footer[role='contentinfo'] .buttons {
         display: block;
         text-align: center;
@@ -1914,6 +1993,13 @@ footer[role='contentinfo'] .social-links li a i {
     }
     .header-cart:hover + .cart-popup, .cart-popup:hover {
         display: none;
+    }
+    .header-secondary .form-search {
+        left: 250px;
+        right: 200px;
+    }
+    .mobile-app-secondary {
+        right: 75px;
     }
 
 }
@@ -1990,6 +2076,15 @@ footer[role='contentinfo'] .social-links li a i {
     }
     .card-restaurant .card-preview {
         border-right: none;
+    }
+    .header-secondary .wrapper-inner {
+        padding-top: 40px;
+    }
+    .header-secondary .form-search {
+        left: 15px;
+        right: 15px;
+        top: 10px;
+        bottom: auto;
     }
 }
 
@@ -2093,5 +2188,23 @@ footer[role='contentinfo'] .social-links li a i {
     footer[role='contentinfo'] .copyrights p span {
         font-size: 13px;
     }
-
+    .logo-secondary {
+        width: 140px;
+        height: 53px;
+    }
+    .mobile-app-secondary {
+        width: 80px;
+        height: 100px;
+        right: 58px;
+    }
+    .mobile-app-secondary div {
+        width: 60px;
+        right: -43px;
+    }
+    .mobile-app-secondary strong, .mobile-app-secondary span {
+        font-size: 22px;
+    }
+    .mobile-app-secondary span {
+        font-size: 12px;
+    }
 }
