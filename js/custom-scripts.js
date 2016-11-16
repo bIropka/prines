@@ -159,8 +159,8 @@ $(document).ready(function () {
     $('.dishes-counter .control').click(function() {
 
         var currentAmount = parseInt($(this).siblings('.current-amount').html());
-        var startCost = parseInt($(this).parent().siblings('.dish-details').find('.value').html());
-        var currentCost = parseInt($(this).parent().siblings('.item-cost').find('.value').html());
+        var startCost = parseInt($(this).parents('li').find('.dish-details').find('.value').html());
+        var currentCost = parseInt($(this).parents('li').find('.item-cost').find('.value').html());
 
         console.log(currentCost);
 
@@ -180,23 +180,9 @@ $(document).ready(function () {
 
         $(this).siblings('.current-amount').html(currentAmount);
         $(this).siblings('label').find('input').attr('value', currentAmount);
-        $(this).parent().siblings('.item-cost').find('.value').html(currentCost);
+        $(this).parents('li').find('.item-cost').find('.value').html(currentCost);
 
     });
-
-    /******************************************************************************************************************
-     ******* sliders scripts
-     ******************************************************************************************************************/
-
-    /*$('.review-slider').slick({
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        appendArrows: '.reviews-header .controls i',
-        prevArrow: '.reviews-header .fa-chevron-left',
-        nextArrow: '.reviews-header .fa-chevron-right',
-        vertical: true,
-        verticalSwiping: true
-    });*/
 
 });
 

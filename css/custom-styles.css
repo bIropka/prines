@@ -302,6 +302,9 @@ header[role='banner'] {
     position: relative;
     text-align: right;
     height: 75px;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.15);
 }
 .page-main .header-panel {
     margin-bottom: 20px;
@@ -1579,6 +1582,7 @@ footer[role='contentinfo'] .social-links li a i {
     width: 100%;
     padding: 30px;
     border-bottom: 2px dashed #f2f2f2;
+    position: relative;
 }
 .cart-list li > div {
     float: left;
@@ -1592,7 +1596,7 @@ footer[role='contentinfo'] .social-links li a i {
 }
 .cart-list li .dish-details {
     height: 172px;
-    min-width: 360px;
+    width: 360px;
 }
 .cart-list li .dish-details h3 a {
     font-family: 'Ubuntu Light', sans-serif;
@@ -1632,11 +1636,24 @@ footer[role='contentinfo'] .social-links li a i {
     vertical-align: middle;
     margin-right: 10px;
 }
+
+.cart-list .dish-controls {
+    position: absolute;
+    left: 638px;
+    right: 30px;
+    top: 30px;
+    bottom: 30px;
+}
 .dishes-counter {
     width: 140px;
     height: 40px;
     border: 2px solid #000000;
     text-align: center;
+    position: relative;
+}
+.cart-list .dish-controls > div {
+    float: left;
+    margin-left: 30px;
 }
 
 .dishes-counter .control {
@@ -1702,13 +1719,17 @@ footer[role='contentinfo'] .social-links li a i {
 .form-cart-order fieldset {
     display: block;
     border: none;
-    width: 33.33333333%;
+    width: 32%;
     float: left;
-    padding: 30px;
+    padding: 30px 20px;
+}
+.form-cart-order fieldset:first-of-type {
+    padding-left: 30px;
 }
 .form-cart-order fieldset:last-of-type {
     height: 311px;
-    position: relative;
+    width: 36%;
+    padding-right: 30px;
 }
 .form-cart-order fieldset label {
     display: block;
@@ -1737,7 +1758,7 @@ footer[role='contentinfo'] .social-links li a i {
     width: auto;
     height: auto;
     border: none;
-    margin-bottom: 0;
+    margin: 5px;
     font-family: 'Ubuntu Regular', sans-serif;
     font-size: 14px;
 }
@@ -1761,27 +1782,28 @@ footer[role='contentinfo'] .social-links li a i {
 
 .form-cart-order button[type='submit'] {
     display: block;
-    width: 100%;
+    width: calc(33.3333333% - 15px);
     height: 50px;
     background: linear-gradient(to right, #d62e4a, #bb2135, #d62e4a);
-    -webkit-transition: none;
-    -moz-transition: none;
-    -ms-transition: none;
-    -o-transition: none;
-    transition: none;
     font-family: 'PFBeauSansPro-SemiBold', sans-serif;
     font-size: 20px;
     text-transform: uppercase;
     color: #ffffff;
     position: absolute;
-    bottom: 0;
+    bottom: 60px;
+    right: 30px;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
 }
 .form-cart-order button[type='submit']:hover {
     background: #bb2135;
 }
 
 /**********************************************************************************************************************
-********** general
+********** page restaurant menu
 ***********************************************************************************************************************/
 
 /**********************************************************************************************************************
@@ -2140,6 +2162,21 @@ footer[role='contentinfo'] .social-links li a i {
         -moz-box-shadow: none;
         box-shadow: none;
     }
+    .cart-list li .dishes-counter, .cart-list li .item-cost {
+        margin: 5px 0 85px;
+        float: none;
+    }
+    .cart-list li .item-cost {
+        margin: 0;
+    }
+    .cart-list li .remove {
+        float: none;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+    }
 
 }
 
@@ -2265,7 +2302,49 @@ footer[role='contentinfo'] .social-links li a i {
     .mobile-app-secondary {
         right: 75px;
     }
-
+    .cart-list .dish-controls {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+    .cart-list  .dish-controls .dishes-counter, .cart-list  .dish-controls .item-cost, .cart-list .dish-controls .remove {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 20px 10px;
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+    }
+    .cart-list  .dish-controls, .cart-list  .dish-controls .dishes-counter {
+        margin-left: 0;
+    }
+    .cart-list li .dish-details {
+        width: calc(100% - 278px);
+    }
+    .cart-list li {
+        padding: 15px;
+    }
+    .form-cart-order fieldset {
+        padding: 15px!important;
+        width: 50%;
+    }
+    .form-cart-order fieldset:last-of-type {
+        width: 100%;
+        height: auto;
+    }
+    .form-cart-order button[type='submit'] {
+        position: static;
+        margin-top: 20px;
+        width: 280px;
+    }
+    .form-cart-order .cart-list {
+        margin-bottom: 15px;
+    }
+    .form-cart-order .cart-list li {
+        padding-top: 30px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -2400,6 +2479,18 @@ footer[role='contentinfo'] .social-links li a i {
         top: 30px;
         bottom: auto;
     }
+    .cart-list li .dish-details {
+        width: 100%;
+        margin: 20px 0;
+        height: auto;
+    }
+    .cart-list li .restaurant-info {
+        position: static;
+        margin-top: 20px;
+    }
+    .form-cart-order fieldset {
+        width: 100%;
+    }
 
 }
 
@@ -2471,4 +2562,15 @@ footer[role='contentinfo'] .social-links li a i {
     .mobile-app-secondary span {
         font-size: 12px;
     }
+    .cart-list .dish-controls .dishes-counter, .cart-list .dish-controls .item-cost {
+        margin-bottom: 10px;
+    }
+    .cart-list .dish-controls .remove {
+        display: block;
+        margin: 0;
+    }
+
+
+
+
 }
