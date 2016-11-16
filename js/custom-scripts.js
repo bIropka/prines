@@ -156,7 +156,7 @@ $(document).ready(function () {
      ******* sliders scripts
      ******************************************************************************************************************/
 
-    $('.review-slider').slick({
+    /*$('.review-slider').slick({
         slidesToShow: 2,
         slidesToScroll: 1,
         appendArrows: '.reviews-header .controls i',
@@ -164,7 +164,7 @@ $(document).ready(function () {
         nextArrow: '.reviews-header .fa-chevron-right',
         vertical: true,
         verticalSwiping: true
-    });
+    });*/
 
 });
 
