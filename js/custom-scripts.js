@@ -153,6 +153,38 @@ $(document).ready(function () {
     });
 
     /******************************************************************************************************************
+     ******* counter scripts
+     ******************************************************************************************************************/
+    
+    $('.dishes-counter .control').click(function() {
+
+        var currentAmount = parseInt($(this).siblings('.current-amount').html());
+        var startCost = parseInt($(this).parent().siblings('.dish-details').find('.value').html());
+        var currentCost = parseInt($(this).parent().siblings('.item-cost').find('.value').html());
+
+        console.log(currentCost);
+
+        if($(this).hasClass('increase')) {
+            if (currentAmount > 1) {
+                currentAmount--;
+                currentCost -= startCost;
+            } else {
+                return false;
+            }
+        } else {
+            currentAmount++;
+            currentCost += startCost;
+        }
+
+
+
+        $(this).siblings('.current-amount').html(currentAmount);
+        $(this).siblings('label').find('input').attr('value', currentAmount);
+        $(this).parent().siblings('.item-cost').find('.value').html(currentCost);
+
+    });
+
+    /******************************************************************************************************************
      ******* sliders scripts
      ******************************************************************************************************************/
 

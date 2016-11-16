@@ -73,7 +73,7 @@
     font-family: 'PFBeauSansPro-Regular', sans-serif;
 }
 
-body {
+html, body {
     background-color: #f2f2f2;
     width: 100%;
     height: 100%;
@@ -107,13 +107,22 @@ button::-moz-focus-inner {
     outline: none;
     border: none;
 }
-input:focus {
+input:focus, text:focus {
     outline: none;
 }
 input:focus::-webkit-input-placeholder {color: transparent;}
 input:focus::-moz-placeholder {color: transparent;}
 input:focus:-moz-placeholder {color: transparent;}
 input:focus:-ms-input-placeholder {color: transparent;}
+
+textarea {
+    resize: none;
+}
+
+textarea:focus::-webkit-input-placeholder {color: transparent;}
+textarea:focus::-moz-placeholder {color: transparent;}
+textarea:focus:-moz-placeholder {color: transparent;}
+textarea:focus:-ms-input-placeholder {color: transparent;}
 
 .button-empty {
     text-transform: uppercase;
@@ -141,17 +150,12 @@ ul li, ol li {
     list-style: none;
 }
 
-h1 {
-
-}
-h2 {
+h1, h2 {
     font-family: 'PFBeauSansPro-SemiBold', sans-serif;
     font-size: 27px;
     color: #bb2135;
 }
-h3 {
 
-}
 .image-wrap {
     display: block;
     position: relative;
@@ -758,6 +762,16 @@ nav ul li a {
     top: 12px;
     z-index: 1;
 }
+.header-secondary .form-search label input::-webkit-input-placeholder {font-family: 'PFBeauSansPro-SemiBold', sans-serif; color: #000000;}
+.header-secondary .form-search label input::-moz-placeholder {font-family: 'PFBeauSansPro-SemiBold', sans-serif; color: #000000;}
+.header-secondary .form-search label input:-moz-placeholder {font-family: 'PFBeauSansPro-SemiBold', sans-serif; color: #000000;}
+.header-secondary .form-search label input:-ms-input-placeholder {font-family: 'PFBeauSansPro-SemiBold', sans-serif; color: #000000;}
+
+.header-secondary .form-search label input:focus::-webkit-input-placeholder {color: transparent;}
+.header-secondary .form-search label input:focus::-moz-placeholder {color: transparent;}
+.header-secondary .form-search label input:focus:-moz-placeholder {color: transparent;}
+.header-secondary .form-search label input:focus:-ms-input-placeholder {color: transparent;}
+
 .header-secondary .form-search label input {
     display: block;
     width: 100%;
@@ -766,7 +780,7 @@ nav ul li a {
     background: transparent;
     padding: 0 30px 0 15px;
     font-family: 'PFBeauSansPro-SemiBold', sans-serif;
-    color: #ffffff;
+    color: #000000;
 }
 .header-secondary .form-search button {
     display: block;
@@ -1192,7 +1206,7 @@ footer[role='contentinfo'] .social-links li a i {
     width: 100%;
     padding-top: 69.35483870967742%;
 }
-.card-dish .image-wrap .mark-leader {
+.image-wrap .mark-leader {
     display: block;
     font-family: 'Ubuntu Light', sans-serif;
     font-size: 10px;
@@ -1533,8 +1547,238 @@ footer[role='contentinfo'] .social-links li a i {
 
 
 /**********************************************************************************************************************
-********** general
+********** page cart
 ***********************************************************************************************************************/
+
+.content-header {
+    padding: 15px 0;
+}
+.content-header h1, .content-header .social-links {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 27px;
+    float: none;
+    margin: 10px 0;
+}
+.content-header .social-links {
+    margin-left: 20px;
+}
+.content-header .social-links li {
+    padding-top: 0;
+}
+
+/* cart list */
+
+.form-cart-order {
+    padding-bottom: 30px;
+    background: #ffffff;
+}
+
+.cart-list li {
+    display: block;
+    width: 100%;
+    padding: 30px;
+    border-bottom: 2px dashed #f2f2f2;
+}
+.cart-list li > div {
+    float: left;
+    margin-left: 30px;
+    position: relative;
+}
+.cart-list li .image-wrap {
+    height: 172px;
+    width: 248px;
+    margin-left: 0;
+}
+.cart-list li .dish-details {
+    height: 172px;
+    min-width: 360px;
+}
+.cart-list li .dish-details h3 a {
+    font-family: 'Ubuntu Light', sans-serif;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.cart-list li .dish-details h3 a:hover {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+.cart-list li .dish-cost, .cart-list li .dish-cost span {
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    font-size: 18px;
+    color: #a8af20;
+}
+.cart-list li .dish-cost {
+    margin-top: 7px;
+}
+.cart-list li .restaurant-info {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.cart-list li .restaurant-info .restaurant-name {
+    font-size: 17px;
+    font-family: 'PFBeauSansPro-Bold', sans-serif;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.cart-list li .restaurant-info .restaurant-name:hover {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+.cart-list li .restaurant-info .image-wrap {
+    width: 58px;
+    height: 52px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.dishes-counter {
+    width: 140px;
+    height: 40px;
+    border: 2px solid #000000;
+    text-align: center;
+}
+
+.dishes-counter .control {
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid #a8af20;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 15px;
+    cursor: pointer
+}
+.dishes-counter .increase {
+    border-left: none;
+    border-right: 7px solid #b71f32;
+    right: auto;
+    left: 15px;
+}
+.dishes-counter .current-amount {
+    display: inline-block;
+    line-height: 36px;
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+}
+.dishes-counter label {
+    display: none;
+}
+.cart-list li .item-cost, .cart-list li .item-cost span {
+    font-size: 20px;
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    line-height: 36px;
+}
+.cart-list li .remove {
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    line-height: 36px;
+    text-transform: uppercase;
+    float: right;
+    background: none;
+}
+.cart-list li .remove i {
+    color: #b71f32;
+    margin-right: 10px;
+    font-size: 18px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.cart-list li .remove:hover i {
+    margin-right: 7px;
+}
+.cart-list li .remove:active {
+    padding-top: 2px;
+}
+.cart-list li .dishes-counter, .cart-list li .item-cost, .cart-list li .remove {
+    margin-top: 66px;
+}
+
+.form-cart-order fieldset {
+    display: block;
+    border: none;
+    width: 33.33333333%;
+    float: left;
+    padding: 30px;
+}
+.form-cart-order fieldset:last-of-type {
+    height: 311px;
+    position: relative;
+}
+.form-cart-order fieldset label {
+    display: block;
+    width: 100%;
+    height: 44px;
+    margin-bottom: 25px;
+}
+.form-cart-order fieldset label input, .form-cart-order fieldset label textarea {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #000000;
+    padding-left: 20px;
+}
+.form-cart-order fieldset .textarea-wrap {
+    height: 251px;
+}
+.form-cart-order fieldset label textarea {
+    padding-top: 8px;
+}
+.form-cart-order fieldset label:last-child {
+    margin-bottom: 0;
+}
+.form-cart-order fieldset .radio-label {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    border: none;
+    margin-bottom: 0;
+    font-family: 'Ubuntu Regular', sans-serif;
+    font-size: 14px;
+}
+.form-cart-order .radio-label:before {
+    width: 15px;
+    height: 15px;
+}
+.form-cart-order input:checked + .radio-label:after {
+    width: 9px;
+    height: 9px;
+}
+
+.form-cart-order .title {
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    color: #434242;
+    margin: 20px 0 10px;
+}
+.form-cart-order .title:first-child {
+    margin-top: 0;
+}
+
+.form-cart-order button[type='submit'] {
+    display: block;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to right, #d62e4a, #bb2135, #d62e4a);
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+}
+.form-cart-order button[type='submit']:hover {
+    background: #bb2135;
+}
 
 /**********************************************************************************************************************
 ********** general
@@ -1725,6 +1969,26 @@ footer[role='contentinfo'] .social-links li a i {
 .form-make-order button:active {
     border: 2px solid #ffffff;
 }
+
+.form-cart-order label input::-webkit-input-placeholder {color: #000000;}
+.form-cart-order label input::-moz-placeholder {color: #000000;}
+.form-cart-order label input:-moz-placeholder {color: #000000;}
+.form-cart-order label input:-ms-input-placeholder {color: #000000;}
+
+.form-cart-order label input:focus::-webkit-input-placeholder {color: transparent;}
+.form-cart-order label input:focus::-moz-placeholder {color: transparent;}
+.form-cart-order label input:focus:-moz-placeholder {color: transparent;}
+.form-cart-order label input:focus:-ms-input-placeholder {color: transparent;}
+
+.form-cart-order textarea::-webkit-input-placeholder {color: #000000;}
+.form-cart-order textarea::-moz-placeholder {color: #000000;}
+.form-cart-order textarea:-moz-placeholder {color: #000000;}
+.form-cart-order textarea:-ms-input-placeholder {color: #000000;}
+
+.form-cart-order textarea:focus::-webkit-input-placeholder {color: transparent;}
+.form-cart-order textarea:focus::-moz-placeholder {color: transparent;}
+.form-cart-order textarea:focus:-moz-placeholder {color: transparent;}
+.form-cart-order textarea:focus:-ms-input-placeholder {color: transparent;}
 
 /**********************************************************************************************************************
 ********** media

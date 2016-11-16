@@ -144,7 +144,7 @@
 
     <div class="wrapper-inner content-block">
 
-        <div class="list-header clearfix">
+        <div class="list-header content-header clearfix">
 
             <h1>Корзина</h1>
 
@@ -162,11 +162,11 @@
 
         </div>
 
-        <form action="#" class="form-cart-order">
+        <form action="#" class="form-cart-order clearfix">
 
             <ul class="cart-list">
 
-                <li>
+                <li class="clearfix">
 
                     <div class="image-wrap">
                         <img src="source/images/image-dish-1.jpg" alt="">
@@ -177,27 +177,62 @@
 
                         <h3><a href="#">Сырные шарики 140 гр.</a></h3>
 
-                        <div class="dish-cost">350 руб.</div>
+                        <div class="dish-cost"><span class="value">350</span> руб.</div>
 
-                        <a class="restaurant-info" href="#">
-                            <div class="image-wrap">
-                                <img src="source/images/logo-restaurant-1.png" alt="">
-                            </div>
-                            Всё к пиву
-                        </a>
+                        <div class="restaurant-info">
+                            <a class="image-wrap" href="#">
+                                <img src="source/images/logo-restaurant-3.png" alt="">
+                            </a>
+                            <a href="#" class="restaurant-name">Всё к пиву</a>
+                        </div>
 
                     </div>
 
                     <div class="dishes-counter">
-                        <div class="decrease"></div>
+                        <div class="control decrease"></div>
                         <div class="current-amount">1</div>
-                        <div class="increase"></div>
+                        <div class="control increase"></div>
                         <label><input type="text"></label>
                     </div>
 
                     <div class="item-cost"><span class="value">350</span> руб.</div>
 
-                    <button class="remove"><i class="fa fa-close"></i></button>
+                    <button class="remove"><i class="fa fa-close"></i>Удалить</button>
+
+                </li>
+
+                <li class="clearfix">
+
+                    <div class="image-wrap">
+                        <img src="source/images/image-dish-1.jpg" alt="">
+                        <div class="mark-leader">Лидер продаж</div>
+                    </div>
+
+                    <div class="dish-details">
+
+                        <h3><a href="#">Сырные шарики 140 гр.</a></h3>
+
+                        <div class="dish-cost"><span class="value">200</span> руб.</div>
+
+                        <div class="restaurant-info">
+                            <a class="image-wrap" href="#">
+                                <img src="source/images/logo-restaurant-4.png" alt="">
+                            </a>
+                            <a href="#" class="restaurant-name">Всё к пиву</a>
+                        </div>
+
+                    </div>
+
+                    <div class="dishes-counter">
+                        <div class="control decrease"></div>
+                        <div class="current-amount">1</div>
+                        <div class="control increase"></div>
+                        <label><input type="text"></label>
+                    </div>
+
+                    <div class="item-cost"><span class="value">200</span> руб.</div>
+
+                    <button class="remove"><i class="fa fa-close"></i>Удалить</button>
 
                 </li>
 
