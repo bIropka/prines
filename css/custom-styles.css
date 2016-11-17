@@ -2168,6 +2168,9 @@ footer[role='contentinfo'] .social-links li a i {
     color: #ffffff;
     margin: 7px 10px 7px 0;
 }
+.form-filters .radio-label {
+    margin: 0 10px 0 0;
+}
 .form-filters .checkbox-label:before, .form-filters .radio-label:before {
     border: 1px solid #ffffff;
 }
@@ -2294,6 +2297,17 @@ footer[role='contentinfo'] .social-links li a i {
     position: absolute;
     left: 0;
     top: 0;
+}
+.form-filters .radio-label:after {
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.form-filters input:checked + .radio-label:after {
+    left: 4px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 
