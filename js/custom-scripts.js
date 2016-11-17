@@ -70,6 +70,10 @@ $(document).ready(function () {
         $('.window-make-order').fadeIn();
     });
 
+    $('.add-review').click(function() {
+        $('.window-add-review').fadeIn();
+    });
+
     $('.form-make-order button').click(function() {
 
         $('.window-make-order').fadeOut();

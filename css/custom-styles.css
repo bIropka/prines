@@ -1432,28 +1432,28 @@ footer[role='contentinfo'] .social-links li a i {
     height: calc(100% - 55px);
     overflow: auto;
 }
-.review-slider .review {
+.review {
     padding: 5px 20px;
     border-top: 2px dashed #f2f2f2;
 }
-.review-slider .review i {
+.review i {
     display: inline-block;
     vertical-align: middle;
     color: #a8af20;
 }
-.review-slider .review .reviewer {
+.review .reviewer {
     display: inline-block;
     vertical-align: middle;
     font-family: 'PFBeauSansPro-SemiBold', sans-serif;
 }
-.review-slider .review time {
+.review time {
     display: inline-block;
     vertical-align: middle;
     font-family: 'Ubuntu Light', sans-serif;
     color: #d1d1d1;
     font-size: 13px;
 }
-.review-slider .review p {
+.review p {
     margin-top: 5px;
     line-height: 1.2;
 }
@@ -2069,8 +2069,69 @@ footer[role='contentinfo'] .social-links li a i {
 }
 
 /**********************************************************************************************************************
-********** general
+********** page restaurant reviews
 ***********************************************************************************************************************/
+
+.add-review {
+    display: block;
+    width: 160px;
+    height: 40px;
+    background: #ccd058;
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    float: right;
+    margin-right: 20px;
+}
+.add-review:hover {
+    background: #ba2034;
+}
+.reviews-list {
+    padding: 29px;
+    background: #ffffff;
+}
+.reviews-list .review {
+    display: block;
+    padding: 10px 0;
+    margin: 0;
+}
+.reviews-list .review:last-child {
+    border-bottom: 2px dashed #f2f2f2;
+}
+
+.pages {
+    padding: 10px 0 30px;
+    background: #ffffff;
+    text-align: center;
+    font-family: 'Ubuntu Light', sans-serif;
+    font-weight: 600;
+    line-height: 20px;
+}
+.pages ul {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+.pages ul li a {
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-family: 'Ubuntu Light', sans-serif;
+    font-weight: 600;
+}
+.pages ul li a:hover {
+    color: #ba2034;
+    text-decoration: none;
+}
+.pages ul li a.active {
+    background: #ba2034;
+    color: #ffffff;
+}
+.pages ul li a.active:hover {
+    color: #ffffff;
+}
 
 /**********************************************************************************************************************
 ********** general
@@ -2096,7 +2157,7 @@ footer[role='contentinfo'] .social-links li a i {
     background: rgba(0,0,0,0.6);
     display: none;
     text-align: left;
-    z-index: 100;
+    z-index: 150;
     overflow: auto;
 }
 
@@ -2110,6 +2171,61 @@ footer[role='contentinfo'] .social-links li a i {
     z-index: 101;
 }
 
+.form-add-review {
+    width: 600px;
+    height: 430px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    padding: 30px;
+}
+.form-add-review .title {
+    font-size: 27px;
+    color: #bb2135;
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    margin-bottom: 5px;
+}
+.form-add-review .radio-label {
+    margin: 5px 20px 5px 0;
+    font-size: 14px;
+}
+.form-add-review .radio-label:before {
+    width: 15px;
+    height: 15px;
+}
+.form-add-review input:checked + .radio-label:after {
+    width: 9px;
+    height: 9px;
+}
+.form-add-review .textarea-wrap {
+    display: block;
+    width: 100%;
+    height: 220px;
+    margin-top: 10px;
+}
+.form-add-review textarea {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+}
+.form-add-review button {
+    display: block;
+    width: 200px;
+    height: 40px;
+    margin-top: 20px;
+    background: #000000;
+    color: #ffffff;
+    border: 2px solid #000000;
+    text-transform: uppercase;
+    font-family: 'Ubuntu Light', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+}
+.form-add-review button:hover {
+    background: #ffffff;
+    color: #000000;
+}
 .close-window {
     display: block;
     width: 23px;
@@ -2645,6 +2761,7 @@ footer[role='contentinfo'] .social-links li a i {
         height: auto;
         min-height: 29px;
         margin-top: 10px;
+        margin-bottom: 10px;
     }
     .restaurant-info .card-preview, .restaurant-info .card-details, .restaurant-info .more-info {
         display: block;
@@ -2662,12 +2779,15 @@ footer[role='contentinfo'] .social-links li a i {
         position: static;
         width: 150px;
     }
+    .add-review {
+        float: none;
+    }
 }
 
 @media (max-width: 768px) {
     nav, .header-panel .orders,.header-panel .phones, .header-panel .sign {
         width: 100%;
-        float: none;
+        float: left;
     }
     nav {
         height: auto;
@@ -2818,6 +2938,15 @@ footer[role='contentinfo'] .social-links li a i {
     }
     .restaurant-info-content p strong br {
         display: none;
+    }
+    .form-add-review {
+        width: 320px;
+        height: 430px;
+        padding: 15px;
+    }
+    .window-add-review .close-window {
+        right: 0;
+        top: -23px;
     }
 
 }
