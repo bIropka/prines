@@ -29,11 +29,13 @@ $(document).ready(function () {
         $('.phones').insertAfter('.burger');
         $('.orders').insertAfter('.burger');
         $('nav').insertAfter('.burger');
+        $('.page-restaurant-menu .cards-list').removeClass('menu-list');
     } else {
         $('.sign').prependTo('.header-panel');
         $('.phones').prependTo('.header-panel');
         $('.orders').prependTo('.header-panel');
         $('nav').prependTo('.header-panel');
+        $('.page-restaurant-menu .cards-list').addClass('menu-list');
     }
 
     $(window).resize(function(){
@@ -42,11 +44,13 @@ $(document).ready(function () {
             $('.phones').insertAfter('.burger');
             $('.orders').insertAfter('.burger');
             $('nav').insertAfter('.burger');
+            $('.page-restaurant-menu .cards-list').removeClass('menu-list');
         } else {
             $('.sign').prependTo('.header-panel');
             $('.phones').prependTo('.header-panel');
             $('.orders').prependTo('.header-panel');
             $('nav').prependTo('.header-panel');
+            $('.page-restaurant-menu .cards-list').addClass('menu-list');
         }
     });
 
@@ -56,6 +60,10 @@ $(document).ready(function () {
 
     $('.burger').click(function() {
         $(this).parents('.mobile-panel').toggleClass('active');
+    });
+    $('.burger-sidebar').click(function() {
+        $(this).toggleClass('active');
+        $(this).siblings('ul').slideToggle();
     });
 
     $('.card-dish button').click(function() {

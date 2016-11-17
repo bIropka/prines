@@ -1089,17 +1089,17 @@ footer[role='contentinfo'] .social-links li a i {
     vertical-align: top;
     position: relative;
 }
-.card-preview .rate {
+.rate {
     margin-top: 5px;
     text-align: center;
 }
-.card-preview .rate i {
+.rate i {
     color: #d4d7d7;
 }
-.card-preview .rate .filled {
+.rate .filled {
     color: #b71f32;
 }
-.card-preview .note-online {
+.note-online {
     display: block;
     font-family: 'Ubuntu Light', sans-serif;
     font-size: 10px;
@@ -1110,9 +1110,11 @@ footer[role='contentinfo'] .social-links li a i {
     color: #ffffff;
     text-align: center;
     position: absolute;
+}
+.card-preview .note-online {
+    bottom: 0;
     left: 20px;
     right: 20px;
-    bottom: 0;
 }
 
 .card-restaurant .card-details {
@@ -1201,7 +1203,7 @@ footer[role='contentinfo'] .social-links li a i {
     background: #ffffff;
     position: relative;
 }
-.popular-dishes .card-dish:nth-child(4n) {
+.cards-list .card-dish:nth-child(4n) {
     margin: 2% 0 0 0;
 }
 .card-dish .image-wrap {
@@ -1341,7 +1343,9 @@ footer[role='contentinfo'] .social-links li a i {
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
-    transform: rotate(180deg);}
+    transform: rotate(180deg);
+}
+
 /* banner */
 .banner {
     display: table;
@@ -1806,9 +1810,258 @@ footer[role='contentinfo'] .social-links li a i {
 ********** page restaurant menu
 ***********************************************************************************************************************/
 
+.content-header .cuisine, .content-header .working-hours {
+    float: right;
+    line-height: 47px;
+}
+.content-header .cuisine {
+    margin-left: 25px;
+}
+.restaurant-info {
+    display: table;
+    width: 100%;
+    background: #ffffff;
+    margin: 0 0 20px;
+    float: none;
+}
+.restaurant-info .card-preview {
+    display: table-cell;
+    width: 205px;
+    padding: 30px;
+    border: none;
+}
+.restaurant-info .card-details {
+    display: table-cell;
+    width: 30%;
+    padding: 30px 0;
+    position: relative;
+}
+.restaurant-info .card-details .note-online {
+    left: 0;
+    bottom: 30px;
+    padding: 3px 20px;
+}
+.restaurant-info .card-details .rate {
+    display: inline-block;
+}
+.restaurant-info .more-info {
+    display: table-cell;
+    padding: 30px;
+}
+.restaurant-info .more-info .sub-title {
+    font-family: 'Ubuntu Bold', sans-serif;
+    font-size: 14px;
+    color: #434242;
+    margin-bottom: 5px;
+}
+.restaurant-info .more-info .text-list li {
+    display: block;
+    padding-left: 10px;
+    position: relative;
+    font-family: 'Ubuntu Regular', sans-serif;
+    font-size: 14px;
+}
+.restaurant-info .more-info .text-list li:before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #ba2034;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+
+.restaurant-single {
+    position: relative;
+}
+
+/* sidebar */
+
+.sidebar {
+    width: 287px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.sidebar-nav {
+    display: table;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.sidebar-nav li {
+    display: table-cell;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    background: #434242;
+    color: #ffffff;
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 5px;
+}
+.sidebar-nav li a {
+    font-size: inherit;
+    color: inherit;
+    font-family: inherit;
+}
+.sidebar-nav li.active {
+    background: #de3250;
+}
+.sidebar-nav li a:hover {
+    color: #de3250;
+    text-decoration: none;
+}
+.sidebar-nav li.active a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+.sidebar-nav li:nth-child(2) {
+    border-left: 2px solid #f2f2f2;
+    border-right: 2px solid #f2f2f2;
+}
+
+.sidebar-links {
+    display: block;
+    width: 100%;
+    background: #e3ecee url('../source/images/background-sidebar.png') no-repeat right 40px;
+    border: 1px solid #ffffff;
+    padding: 25px;
+    height: calc(100% - 49px);
+}
+.sidebar-links li {
+    display: list-item;
+    margin: 5px 0;
+    padding-left: 13px;
+    position: relative;
+}
+.sidebar-links li:before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #ba2034;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.sidebar-links li a {
+    font-family: 'Ubuntu Light', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #434242;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.sidebar-links li a:hover {
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+}
+.sidebar-links li a.active {
+    font-family: 'Ubuntu Bold', sans-serif;
+    color: #000000;
+    border-bottom: 1px solid transparent;
+}
+
+.burger-sidebar {
+    display: none;
+    font-size: 24px;
+    color: #000000;
+}
+
+/* contentbar */
+
+.contentbar {
+    margin-left: 320px;
+}
+.contentbar-header {
+    margin-bottom: 20px;
+}
+.contentbar-header h2 {
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    font-size: 24px;
+    line-height: 29px;
+    color: #434242;
+    float: left;
+}
+.contentbar-header .note {
+    padding-left: 45px;
+    height: 29px;
+    overflow: hidden;
+    float: right;
+    font-family: 'Ubuntu Italic', sans-serif;
+    font-size: 14px;
+    line-height: 1.1;
+    width: 45%;
+    position: relative;
+}
+.contentbar-header .note:before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 26px;
+    background: transparent url('../source/images/icon-lamp.png') no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.contentbar .menu-list li, .contentbar .menu-list li:nth-child(4n) {
+    width: 32%;
+    margin: 0 2% 2% 0;
+}
+.contentbar .menu-list li:nth-child(3n) {
+    margin: 0 0 2% 0;
+}
+.contentbar .menu-list li:nth-child(4n) .dish-info {
+    left: 100%;
+    top: 0;
+}
+.contentbar .menu-list li:nth-child(4n) .dish-info:after {
+    left: -6px;
+    top: 0;
+    bottom: 0;
+    right: auto;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+}
+.contentbar .menu-list li:nth-child(3n) .dish-info {
+    left: auto;
+    right: 100%;
+}
+.contentbar .menu-list li:nth-child(3n) .dish-info:after {
+    left: auto;
+    right: -6px;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
 /**********************************************************************************************************************
-********** general
+********** page restaurant info
 ***********************************************************************************************************************/
+
+.restaurant-info-content {
+    background: #ffffff;
+}
+.om-map {
+    display: block;
+    width: 100%;
+    height: 300px;
+}
 
 /**********************************************************************************************************************
 ********** general
@@ -2177,6 +2430,40 @@ footer[role='contentinfo'] .social-links li a i {
         bottom: 0;
         left: 0;
     }
+    .card-dish button {
+        font-size: 10px;
+        width: 58%;
+        padding-left: 30px;
+    }
+    .card-dish button:hover:before {
+        left: 10px;
+    }
+    .sidebar {
+        position: static;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .sidebar-links ul {
+        display: none;
+        padding-top: 20px;
+    }
+    .burger-sidebar {
+        display: block;
+    }
+    .burger-sidebar.active {
+        color: #ba2034;
+    }
+    .contentbar {
+        margin-left: 0;
+    }
+    .content-header .cuisine, .content-header .working-hours {
+        float: none;
+        margin-left: 0;
+        line-height: 1.4;
+    }
+    .content-header .working-hours {
+        margin-top: 5px;
+    }
 
 }
 
@@ -2345,6 +2632,31 @@ footer[role='contentinfo'] .social-links li a i {
     .form-cart-order .cart-list li {
         padding-top: 30px;
     }
+    .contentbar-header h2 {
+        float: none;
+    }
+    .contentbar-header .note {
+        width: 100%;
+        height: auto;
+        min-height: 29px;
+        margin-top: 10px;
+    }
+    .restaurant-info .card-preview, .restaurant-info .card-details, .restaurant-info .more-info {
+        display: block;
+        float: left;
+        padding-bottom: 15px;
+    }
+    .restaurant-info .card-details {
+        width: 400px;
+    }
+    .restaurant-info .more-info {
+        width: 100%;
+        padding-top: 0;
+    }
+    .restaurant-info .card-details .note-online {
+        position: static;
+        width: 150px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -2490,6 +2802,14 @@ footer[role='contentinfo'] .social-links li a i {
     }
     .form-cart-order fieldset {
         width: 100%;
+    }
+    .content-header h1, .content-header .social-links {
+        display: block;
+        margin-left: 0;
+    }
+    .restaurant-info .card-details {
+        padding-left: 30px;
+        max-width: 400px;
     }
 
 }
