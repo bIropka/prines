@@ -224,7 +224,7 @@ section {
     top: 1px;
 }
 input:checked + .checkbox-label:before {
-    content: '\2713';
+    background: transparent url('../source/images/icon-ok.png') no-repeat center;
     border: 1px solid #a6aa29;
 }
 .radio-label:before {
@@ -2592,7 +2592,7 @@ footer[role='contentinfo'] .social-links li a i {
     nav {
         max-width: 320px;
     }
-    .header-panel .orders,.header-panel .phones, .header-panel .sign {
+    .header-panel .orders, .header-panel .sign {
         max-width: 310px;
     }
     .header-panel .phones {
@@ -2603,9 +2603,10 @@ footer[role='contentinfo'] .social-links li a i {
 @media (max-width: 980px) {
     nav {
         max-width: 270px;
+        height: auto;
     }
     .header-panel .orders,.header-panel .phones, .header-panel .sign {
-        max-width: 240px;
+        width: 260px;
     }
     .header-panel .phones {
         width: 180px;
@@ -2784,6 +2785,13 @@ footer[role='contentinfo'] .social-links li a i {
     }
 }
 
+@media (max-width: 800px) {
+
+    .header-panel .orders, .header-panel .sign {
+        width: 240px;
+    }
+}
+
 @media (max-width: 768px) {
     nav, .header-panel .orders,.header-panel .phones, .header-panel .sign {
         width: 100%;
@@ -2865,6 +2873,9 @@ footer[role='contentinfo'] .social-links li a i {
         right: 15px;
         top: 10px;
         bottom: auto;
+    }
+    .header-panel .orders,.header-panel .phones, .header-panel .sign {
+        max-width: 100%;
     }
 }
 
@@ -3026,7 +3037,9 @@ footer[role='contentinfo'] .social-links li a i {
         display: block;
         margin: 0;
     }
-
+    .header-panel .orders, .header-panel .sign {
+        width: 290px;
+    }
 
 
 
