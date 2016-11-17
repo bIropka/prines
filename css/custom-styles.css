@@ -2134,16 +2134,196 @@ footer[role='contentinfo'] .social-links li a i {
 }
 
 /**********************************************************************************************************************
-********** general
+********** page restaurants
 ***********************************************************************************************************************/
+.page-restaurants h1 {
+    float: left;
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    font-size: 27px;
+    margin-right: 20px;
+}
+.form-filters {
+    margin-top: 20px;
+    background: #434242 url('../source/images/background-filters.png') no-repeat 105% -125px;
+}
+.form-filters fieldset {
+    display: block;
+    border: none;
+    width: 50%;
+    float: left;
+    padding: 25px;
+}
+.form-filters .title {
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    font-size: 17px;
+    color: #bec447;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+.form-filters fieldset .title:nth-of-type(2), .form-filters .title-hours {
+    margin-top: 25px;
+}
+.form-filters .checkbox-label, .form-filters .radio-label {
+    color: #ffffff;
+    margin: 7px 10px 7px 0;
+}
+.form-filters .checkbox-label:before, .form-filters .radio-label:before {
+    border: 1px solid #ffffff;
+}
+.filter-cost-wrap br {
+    display: none;
+}
+#filter-cost {
+    padding-top: 10px;
+}
+#filter-cost .ui-rangeSlider-container, #filter-cost .ui-rangeSlider-innerBar  {
+    height: 8px;
+    background: #ffffff;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+#filter-cost .ui-rangeSlider {
+    height: auto;
+    padding: 0;
+}
+#filter-cost .ui-rangeSlider-arrow {
+    display: none;
+}
+#filter-cost .ui-rangeSlider-bar {
+    background: #bec447;
+    border: none;
+    height: 8px;
+    margin-top: 0;
+    opacity: 1;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+#filter-cost .ui-rangeSlider-label {
+    display: block;
+    width: 9px;
+    height: 16px;
+    background: #bec447;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding: 0;
+    bottom: auto;
+    top: auto;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    cursor: pointer;
+    margin: -3px 0 0 0;
+    border: 2px solid #434242;
+}
+#filter-cost .ui-rangeSlider-label-value, #filter-cost .ui-rangeSlider-label-inner {
+    display: none;
+}
+.filter-cost-wrap label, .filter-cost-wrap p {
+    font-family: 'Ubuntu Regular', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+}
+.filter-cost-wrap input {
+    font-family: 'Ubuntu Regular', sans-serif;
+    font-size: 14px;
+    color: #9d9d9d;
+    display: inline-block;
+    margin: 0 10px;
+    width: 90px;
+    height: 30px;
+    vertical-align: middle;
+    background: transparent;
+    border: 1px solid #ffffff;
+    text-align: center;
+}
+.filter-cost-wrap input[type='radio'] {
+    display: none;
+}
+.form-filters .filter-submit {
+    width: 100%;
+    border-top: 1px solid white;
+}
+.filter-submit button {
+    width: 40%;
+    height: 50px;
+    background: linear-gradient(to right, #d62e4a, #bb2135, #d62e4a);
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #ffffff;
+    float: left;
+}
+.filter-submit button:hover {
+    background: #bb2135;
+}
+.filter-submit button span {
+    font-size: inherit;
+    color: inherit;
+    font-family: inherit;
+}
+.form-filters .filter-submit .note {
+    width: calc(50% - 25px);
+    float: right;
+    font-family: 'Ubuntu Italic', sans-serif;
+    font-size: 14px;
+    color: #b8b8b8;
+    padding-left: 40px;
+    position: relative;
+}
+.form-filters .filter-submit .note:before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 26px;
+    background: transparent url('../source/images/icon-lamp-green.png') no-repeat center;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
 
 /**********************************************************************************************************************
-********** general
+********** page-text
 ***********************************************************************************************************************/
 
-/**********************************************************************************************************************
-********** modals
-***********************************************************************************************************************/
+article {
+    display: block;
+    background: #ffffff;
+    padding: 30px;
+}
+article h2 {
+    font-family: 'PFBeauSansPro-SemiBold', sans-serif;
+    color: #434242;
+    font-size: 24px;
+}
+article p {
+    font-family: 'Ubuntu Regular', sans-serif
+    color: #434242;
+    font-size: 14px;
+    padding-top: 20px;
+    text-align: justify;
+}
+article img {
+    width: 324px;
+    max-width: 50%;
+    float: left;
+    margin: 20px 30px 20px 0;
+}
 
 /******************************
 ********** modals *************
@@ -2783,6 +2963,17 @@ footer[role='contentinfo'] .social-links li a i {
     .add-review {
         float: none;
     }
+    .form-filters .filter-submit .note {
+        float: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .form-filters .filter-submit button {
+        width: 50%;
+        height: 45px;
+        font-size: 18px;
+        float: none;
+    }
 }
 
 @media (max-width: 800px) {
@@ -2876,6 +3067,14 @@ footer[role='contentinfo'] .social-links li a i {
     }
     .header-panel .orders,.header-panel .phones, .header-panel .sign {
         max-width: 100%;
+    }
+    .form-filters fieldset {
+        float: none;
+        width: 100%;
+    }
+    .form-filters .filter-submit button {
+        width: 290px;
+        font-size: 16px;
     }
 }
 
@@ -3040,7 +3239,25 @@ footer[role='contentinfo'] .social-links li a i {
     .header-panel .orders, .header-panel .sign {
         width: 290px;
     }
-
-
+    .filter-cost-wrap br {
+        display: block;
+    }
+    .form-filters fieldset {
+        padding: 15px;
+    }
+    .filter-cost-wrap br + input {
+        margin-left: 9px;
+        margin-top: 10px;
+    }
+    .form-filters .filter-submit button {
+        width: 100%;
+    }
+    .card-restaurant .parameters p strong {
+        font-size: 16px;
+    }
+    article img {
+        width: 100%;
+        max-width: 100%;
+    }
 
 }

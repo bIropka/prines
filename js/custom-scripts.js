@@ -196,6 +196,26 @@ $(document).ready(function () {
 
     });
 
+    /******************************************************************************************************************
+     ******* filter-cost scripts
+     ******************************************************************************************************************/
+
+    var filterCost = $("#filter-cost");
+
+    $("#filter-cost").rangeSlider({
+        bounds:{min: 0, max: 5000},
+        defaultValues:{min: 500 , max: 2700},
+        step: 50
+    });
+
+    $("#filter-cost").bind("valuesChanging", function(e, data){
+        $( "#min-cost" ).val( data.values.min );
+        $( "#max-cost" ).val( data.values.max );
+    });
+
+    $( "#min-cost" ).val( $("#filter-cost").rangeSlider('min') );
+    $( "#max-cost" ).val( $("#filter-cost").rangeSlider('max') );
+
 });
 
 
