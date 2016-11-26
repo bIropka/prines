@@ -80,8 +80,11 @@ $(document).ready(function () {
 
         $('.cart-message').stop().fadeIn(0);
 
+        $('.header-cart').addClass('active');
+
         setTimeout(function() {
             $('.cart-message').fadeOut(2000);
+            $('.header-cart').removeClass('active');
         }, 3000);
 
         return false;
@@ -176,7 +179,7 @@ $(document).ready(function () {
 
         console.log(currentCost);
 
-        if($(this).hasClass('increase')) {
+        if($(this).hasClass('decrease')) {
             if (currentAmount > 1) {
                 currentAmount--;
                 currentCost -= startCost;

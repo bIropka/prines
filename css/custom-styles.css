@@ -504,9 +504,113 @@ nav ul li a {
     padding-left: 1px;
 }
 
+/* Buzz Out */
+@-webkit-keyframes hvr-buzz-out {
+    10% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+    }
+    20% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+    }
+    30% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+    }
+    40% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+    }
+    50% {
+        -webkit-transform: translateX(2px) rotate(1deg);
+        transform: translateX(2px) rotate(1deg);
+    }
+    60% {
+        -webkit-transform: translateX(-2px) rotate(-1deg);
+        transform: translateX(-2px) rotate(-1deg);
+    }
+    70% {
+        -webkit-transform: translateX(2px) rotate(1deg);
+        transform: translateX(2px) rotate(1deg);
+    }
+    80% {
+        -webkit-transform: translateX(-2px) rotate(-1deg);
+        transform: translateX(-2px) rotate(-1deg);
+    }
+    90% {
+        -webkit-transform: translateX(1px) rotate(0deg);
+        transform: translateX(1px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateX(-1px) rotate(0deg);
+        transform: translateX(-1px) rotate(0deg);
+    }
+}
+@keyframes hvr-buzz-out {
+    10% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+    }
+    20% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+    }
+    30% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+    }
+    40% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+    }
+    50% {
+        -webkit-transform: translateX(2px) rotate(1deg);
+        transform: translateX(2px) rotate(1deg);
+    }
+    60% {
+        -webkit-transform: translateX(-2px) rotate(-1deg);
+        transform: translateX(-2px) rotate(-1deg);
+    }
+    70% {
+        -webkit-transform: translateX(2px) rotate(1deg);
+        transform: translateX(2px) rotate(1deg);
+    }
+    80% {
+        -webkit-transform: translateX(-2px) rotate(-1deg);
+        transform: translateX(-2px) rotate(-1deg);
+    }
+    90% {
+        -webkit-transform: translateX(1px) rotate(0deg);
+        transform: translateX(1px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateX(-1px) rotate(0deg);
+        transform: translateX(-1px) rotate(0deg);
+    }
+}
+.hvr-buzz-out {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+}
+.hvr-buzz-out.active {
+    -webkit-animation-name: hvr-buzz-out;
+    animation-name: hvr-buzz-out;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+
 .header-panel .cart-popup {
     display: none;
-    width: 270px;
+    width: 360px;
     padding: 23px;
     background: #ffffff;
     position: absolute;
@@ -529,11 +633,16 @@ nav ul li a {
     -moz-border-radius: 100%;
     border-radius: 100%;
     float: left;
-    margin-right: 10px;
+    margin-right: 15px;
 }
 .cart-popup .image-wrap img {
     height: 100%;
     width: auto;
+}
+.cart-popup .cart-dish-info {
+    width: 170px;
+    float: left;
+    padding-right: 10px;
 }
 .cart-popup h4 {
     line-height: 1.2;
@@ -553,13 +662,65 @@ nav ul li a {
     color: #aeb125;
 }
 .cart-popup .summa, .cart-popup .summa span {
-    font-size: 17px;
+    font-size: 20px;
     font-family: 'PFBeauSansPro-SemiBold', sans-serif;
     text-align: center;
 }
-.cart-popup button {
-    display: block;
+.cart-popup .cart-dish-control {
+    width: 70px;
+    float: right;
+}
+.cart-popup .dishes-counter {
     width: 100%;
+    height: 25px;
+    border: none;
+    text-align: center;
+    position: relative;
+}
+.cart-popup .dishes-counter .control {
+    width: auto;
+    height: 25px;
+    border: none;
+    color: #b71f32;
+    top: 0;
+    left: 0;
+    right: auto;
+}
+.cart-popup .dishes-counter .increase {
+    color: #a8af20;
+    border: none;
+    right: 0;
+    left: auto;
+}
+.cart-popup .dishes-counter .control i {
+    color: inherit;
+    font-size: 11px;
+    line-height: 25px;
+}
+.cart-popup .dishes-counter .current-amount {
+    line-height: 25px;
+    width: 40px;
+    background: #f8f8f8;
+    border: 1px solid #dfdfdf;
+    font-family: 'Ubuntu Regular', sans-serif;
+    font-size: 12px;
+    font-weight: 100;
+    color: #525252;
+}
+.cart-popup .cart-dish-control button {
+    background: none;
+    border: none;
+    color: #bb2135;
+    font-family: 'Ubuntu Bold', sans-serif;
+    font-size: 12px;
+    margin-top: 10px;
+}
+.cart-popup .cart-dish-control button i {
+    margin-right: 8px;
+}
+.cart-popup > button {
+    display: block;
+    width: 48.5%;
     height: 45px;
     background: #bb2135;
     border: 2px solid #bb2135;
@@ -568,11 +729,23 @@ nav ul li a {
     color: #ffffff;
     text-transform: uppercase;
     line-height: 41px;
+    font-size: 12px;
+    float: left;
 }
-.cart-popup button:hover {
+.cart-popup .clear-cart {
+    background: #434242;
+    border: 2px solid #434242;
+    margin-left: 3%;
+}
+.cart-popup .make-order:hover {
     background: #ffffff;
     border: 2px solid #bb2135;
     color: #bb2135;
+}
+.cart-popup .clear-cart:hover {
+    background: #ffffff;
+    border: 2px solid #434242;
+    color: #434242;
 }
 .cart-popup:before {
     content: '';
@@ -1666,19 +1839,19 @@ footer[role='contentinfo'] .social-links li a i {
     height: 0;
     border-top: 7px solid transparent;
     border-bottom: 7px solid transparent;
-    border-left: 7px solid #a8af20;
+    border-right: 7px solid #a8af20;
     position: absolute;
     margin: auto;
     top: 0;
     bottom: 0;
-    right: 15px;
+    left: 15px;
     cursor: pointer
 }
 .dishes-counter .increase {
-    border-left: none;
-    border-right: 7px solid #b71f32;
-    right: auto;
-    left: 15px;
+    border-right: none;
+    border-left: 7px solid #b71f32;
+    left: auto;
+    right: 15px;
 }
 .dishes-counter .current-amount {
     display: inline-block;
