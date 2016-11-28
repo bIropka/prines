@@ -610,7 +610,7 @@ nav ul li a {
 
 .header-panel .cart-popup {
     display: none;
-    width: 360px;
+    width: 390px;
     padding: 23px;
     background: #ffffff;
     position: absolute;
@@ -620,6 +620,12 @@ nav ul li a {
     -webkit-box-shadow: 0 4px 5px -3px rgba(0,0,0,0.75);
     -moz-box-shadow: 0 4px 5px -3px rgba(0,0,0,0.75);
     box-shadow: 0 4px 5px -3px rgba(0,0,0,0.75);
+}
+.cart-popup ul {
+    display: block;
+    width: 100%;
+    height: 350px;
+    overflow: auto;
 }
 .cart-popup ul li {
     display: block;
@@ -669,6 +675,7 @@ nav ul li a {
 .cart-popup .cart-dish-control {
     width: 70px;
     float: right;
+    margin-right: 15px;
 }
 .cart-popup .dishes-counter {
     width: 100%;
