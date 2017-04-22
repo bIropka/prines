@@ -6,16 +6,30 @@ $(document).ready(function () {
 
     if ($(window).scrollTop() >= 30) {
         $('header[role="banner"]').addClass('fixed');
+        if($(window).width() < '1231') {
+            $('.sidebar-links').addClass('to-top');
+        }
+
     } else {
         $('header[role="banner"]').removeClass('fixed');
+        if($(window).width() < '1231') {
+            $('.sidebar-links').removeClass('to-top');
+        }
     }
     
     $(window).scroll(function() {
 
         if ($(window).scrollTop() >= 30) {
             $('header[role="banner"]').addClass('fixed');
+            if($(window).width() < '1231') {
+                $('.sidebar-links').addClass('to-top');
+            }
+
         } else {
             $('header[role="banner"]').removeClass('fixed');
+            if($(window).width() < '1231') {
+                $('.sidebar-links').removeClass('to-top');
+            }
         }
         
     });
@@ -63,7 +77,7 @@ $(document).ready(function () {
     });
     $('.burger-sidebar').click(function() {
         $(this).toggleClass('active');
-        $(this).siblings('ul').slideToggle();
+        $('.sidebar-links').toggleClass('active');
     });
 
     $('.card-dish button').click(function() {
